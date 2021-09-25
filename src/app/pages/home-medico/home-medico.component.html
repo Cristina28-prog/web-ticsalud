@@ -44,26 +44,35 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td> 1027384</td>
-                                <td> Javier Rodriguez</td>
-                                <td> 12/01/2021</td>
+                              <tr *ngFor="let cita of listCitas">
+                                <th scope="row">{{cita.id}}</th>
+                                <td> {{cita.identificacion}}</td>
+                                <td>  {{cita.name}}</td>
+                                <td>  {{cita.fecha}}</td>
+                                <td><button class="" (click)="openModal(cita)">Detalle</button></td>
+                                
                               </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td> 245677</td>
-                                <td> Ricardo Meneses </td>
-                                <td> 3/02/2021</td>
-                              </tr>
+                             
                             </tbody>
                           </table>        
       
                     </main>
               </div>
           </div>
+       
         </div>
           
+        <div class="modal-medico" *ngIf="modalShow" >
+           <div class="modalHeader">  <h2>Cita medica</h2>
+              <span class="icon-close" (click)="close()">X</span>
+            </div>
+          <div class="content-modal">
+              <div class="title-label"><span>Nombre:</span> {{" "+selectCita.name}}</div>      
+              <div class="title-label"><span>Identificación:</span>{{" "+selectCita.identificacion}}</div>      
+              <div class="title-label"><span> de la cita:</span>{{" "+selectCita.fecha}} </div>      
+              <p></p>
+          </div>
+        </div>
       
   <footer > 
       <div class = "container4">
@@ -74,12 +83,6 @@
           </div>
       </div>
   </footer>                        
-               
-
-                                   
-                           
-                 
-          
   
  
   
