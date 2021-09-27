@@ -37,7 +37,7 @@
                                 <td> {{cita.identificacion}}</td>
                                 <td>  {{cita.name}}</td>
                                 <td>  {{cita.fecha}}</td>
-                                <td><button class="" (click)="openModal(cita)">Detalle</button></td>
+                                <td><button   mat-raised-button color="primary" (click)="openModal(cita)">Detalle</button></td>
                                 
                               </tr>
                              
@@ -50,19 +50,76 @@
        
         </div>
           
-        <div class="modal-medico" *ngIf="modalShow" >
+        <div class="modal-reporte" *ngIf="modalShow" >
            <div class="modalHeader">  <h2>Cita medica</h2>
               <span class="icon-close" (click)="close()">X</span>
             </div>
           <div class="content-modal">
+            <div class="info-user">
               <div class="title-label"><span>Nombre:</span> {{" "+selectCita.name}}</div>      
               <div class="title-label"><span>Identificación:</span>{{" "+selectCita.identificacion}}</div>      
               <div class="title-label"><span> de la cita:</span>{{" "+selectCita.fecha}} </div>      
-              <p></p>
+            </div>  
+            <br/>
+           <h4 class="title-label"> Observaciones:</h4>
+          <div> <textarea class="text-area" name="comentarios" rows="4"  placeholder="comentarios"> </textarea></div>
+         
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Id Medicamento </th>
+                <th scope="col">Medicamento</th>
+                <th scope="col">Cantidad </th>
+                <th scope="col">Detalle</th>
+             </tr>
+            </thead>
+            <tbody class="content-table">
+              <tr *ngFor="let item of listaMedicamanetos; let i=index;">
+                <th scope="row">{{item.id}}</th>
+                <td> {{item.medicamento}}</td>
+                <td>  {{item.cantidad}}</td>
+                <td>  {{item.detalle}}</td>
+                <td>    
+                   <mat-icon class="" (click)="remove(i)"> delete</mat-icon> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+      
+          <div class = "form-medicamento">
+           <div> 
+            <label For= "medicamento">
+                <span> Medicamento </span>
+                <input type="text" name="medicamento" id="medicamento"  [(ngModel)]="medicamento" #ctrl="ngModel" />
+            </label>
+        
+            <label For= "cantidad">
+                <span> Cantidad </span>
+                <input type="number" name="cantidad" id="cantidad" [(ngModel)]="cantidad" #ctrl="ngModel" />
+            </label>
           </div>
+          <div style="margin-top: 5px;">
+            <label For= "detalle">
+              <span> Detalle </span>
+              <input name="detalle" id="detalle"  [(ngModel)]="detalle" #ctrl="ngModel"/>  
+            </label>
+          
+            <button mat-raised-button color="primary" style="margin-left: 20px;" (click)="add()" >Agregar </button>
+          
+            <button mat-raised-button color="primary" style="margin-left: 30px;" (click)="close()">Cancelar</button>
+  
+            <button mat-raised-button color="primary" style="margin-left: 30px;" (click)="save()">Guardar Cita</button>
+  
+          </div>
+          </div>
+             </div>
+
+
+          
         </div>
       
-  <footer > 
+  <!--footer > 
       <div class = "container4">
           <div class = "row">
               <div class = "col">
@@ -70,7 +127,7 @@
               </div>
           </div>
       </div>
-  </footer>                        
+  </footer-->                        
   
  
   

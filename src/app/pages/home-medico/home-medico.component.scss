@@ -76,3 +76,37 @@
     bottom: 0px;
     width: 100%;
   }
+
+  .h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+  }
+
+  .form-medicamento{
+    
+    input{
+      margin-left: 2px;
+    }
+    label{
+      width: 50%;
+    }
+    
+    span{
+      width: 80px;
+      max-width: 80px;
+      min-width: 80px;
+      margin-right: 4px;
+    }
+    
+  }
+
+  .info-user{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }

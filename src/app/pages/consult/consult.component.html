@@ -1,7 +1,6 @@
 
 <div class="container-page">  
   <app-headergeneral></app-headergeneral>
-      
 
   <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
     <mat-button-toggle value="lista citas" (click)="selectPage('citas')">lista citas</mat-button-toggle>
@@ -343,41 +342,92 @@
 
               
           </div>
+          <div class="modal-medico" *ngIf="modalShow" >
+            <div class="modalHeader">  <h2> Guardar Cita</h2>
+               <span class="icon-close" (click)="close()">X</span>
+             </div>
+           <div class="content-modal">
+            <form>
+              
+              <div class="form-group">
+                <label for=" identificacion"> Identificacion</label>
+                <input type=" identificación" class="form-control" id=" identificacion" placeholder="identificacion">
+                <small id="emailHelp" class="form-text text-muted"> identificacion del paciente</small>
+              </div>
+              <div class="form-group">
+                <label for="Nombre"> Nombre </label>
+                <input type="text" class="form-control" id="Nombre"  placeholder="nombre paciente">
+                <small id="emailHelp" class="form-text text-muted"> Nombre completo</small>
+              </div>
+              <div class="form-group">
+                <label for="hora"> hora </label>
+                <input type="time" class="form-control" id="hora"  placeholder="hora de la cita">
+              </div>
+              <button type="submit" class="btn btn-primary"> Guardar</button>
+            </form>  
+            
+    
+               <p></p>
+           </div>
+      </div>
       </div>
 
-      <div class = "container2" *ngIf="select=='pacientes'">
+      <div class = "containermodal" *ngIf="select=='pacientes'">
         <h2>Pacientes</h2>
-
-      </div>
-
-      <div class="modal-medico" *ngIf="modalShow" >
-        <div class="modalHeader">  <h2> Guardar Cita</h2>
-           <span class="icon-close" (click)="close()">X</span>
-         </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col"> #</th>
+              <th scope="col">N° Identificación</th>
+              <th scope="col"> Nombre </th>
+              <th scope="col"> Fecha</th>
+              <th scope="col"> Detalle </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope= "row"> 1 </th>
+              <td> 1846068</td>
+              <td> Juan Manuel Villanueva</td>
+              <td> 12/02/2021</td>
+              <mat-icon class="" (click)="openModaldetails()"> more_vert</mat-icon> 
+            </tr>
+           </tbody>
+        </table>  
+        <div class="modal-medicamentos" *ngIf="modalShowdetails">
+          <div class="modalHeader">  <h2> detalle medicamentos</h2>
+            <span class="icon-close" (click)="closedetails()">X</span>
+          </div>
        <div class="content-modal">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col"> Id Medicamento</th>
+              <th scope="col"> Nombre Medicamento</th>
+              <th scope="col"> Cantidad </th>
+              <th scope="col"> Fecha</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope= "row"> 13f67h8 </th>
+              <td> Acetaminofen tabletas X 100mg</td>
+              <td> 2 </td>
+              <td> 12/02/2021</td>
+              
+            </tr>
+           </tbody>
+        </table> 
         <form>
           
           <div class="form-group">
-            <label for=" identificacion"> Identificacion</label>
-            <input type=" identificación" class="form-control" id=" identificacion" placeholder="identificacion">
-            <small id="emailHelp" class="form-text text-muted"> identificacion del paciente</small>
+            
           </div>
-          <div class="form-group">
-            <label for="Nombre"> Nombre </label>
-            <input type="text" class="form-control" id="Nombre"  placeholder="nombre paciente">
-            <small id="emailHelp" class="form-text text-muted"> Nombre completo</small>
-          </div>
-          <div class="form-group">
-            <label for="hora"> hora </label>
-            <input type="time" class="form-control" id="hora"  placeholder="hora de la cita">
-          </div>
-          <button type="submit" class="btn btn-primary"> Guardar</button>
+          
         </form>  
-
-           <p></p>
        </div>
 
-     
-
      </div>
+      </div>       
 </div>                          

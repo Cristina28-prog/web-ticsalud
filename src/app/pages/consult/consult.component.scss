@@ -57,6 +57,22 @@
        
   }
 
+  .containermodal{
+    
+    margin-top: 80px;
+    padding-top: 20Px;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 30px;
+    width: 700px;
+    height: 150px;
+    margin: auto;
+    margin-bottom:300px;
+    border-radius: 10px;
+       
+  }
+
   .col-12 {
     margin: 10px;
     
@@ -77,6 +93,31 @@
       text-align: center;
   }
 
-  .modal-medico{
+  .modal-medicamentos{
     position: absolute;
-  }
+    width: 70%;
+    height: 400px;
+    top: calc( 50vh - 200px );
+    left: 15%;
+    border-radius: 10px;
+    border: 0px solid #ddd; 
+    background-color: #fefefe;
+    -webkit-box-shadow: 2px 3px 24px 2px rgba(212,205,212,1);
+    -moz-box-shadow: 2px 3px 24px 2px rgba(212,205,212,1);
+    box-shadow: 2px 3px 24px 2px rgba(212,205,212,1);
+    z-index: 1000s;}
+
+    
+    .modalHeader{
+      background-color: #dddddd;
+      height: 40px; 
+      width: 100%;
+      padding: 5px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      }
+ 
+    .content-modal{
+     padding: 20px;
+      span{
+       font-weight: 800;}}

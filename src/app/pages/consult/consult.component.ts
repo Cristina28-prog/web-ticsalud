@@ -9,12 +9,23 @@ export class ConsultComponent implements OnInit {
   modalShow:boolean=false;
   guardarcitas= [];
 
-    guardarCita={
+     guardarCita={
      name:"",
      identificacion:"",
      fecha:""
   }
   select="citas"
+
+  modalShowdetails:boolean=false;
+  verdetalles= [];
+      
+     verdetalle={
+       idMedicamento:"",
+       nombreMed:"",
+       cantidad:"",
+       fecha:"",
+
+     }
 
   constructor() { }
 
@@ -34,5 +45,12 @@ export class ConsultComponent implements OnInit {
     this.modalShow=true;
   }
   
+  closedetails(){
+    this.modalShowdetails=false;
+
+  }
+  openModaldetails(){
+    this.modalShowdetails=true;
+  }
 
 }

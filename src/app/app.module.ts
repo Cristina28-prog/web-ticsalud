@@ -21,6 +21,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatOptgroup } from '@angular/material/core';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -49,7 +50,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
@@ -57,7 +59,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

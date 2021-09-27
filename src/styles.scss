@@ -13,10 +13,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container-page{
     height: 100vh;
+    overflow-x: hidden;
   
   }
 
-  .modal-medico{
+  .modal-medico, .modal-reporte {
     position: absolute;
     width: 70%;
     height: 400px;
@@ -49,6 +50,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
  
    }
+
+   .modal-reporte{
+      width: 60%;
+      height: calc( 100vh - 100px );
+      top: 40px;
+      left: 20%;
+     .text-area{
+       width: 80%;
+     }
+     .content-table{
+       height: 160px;
+       overflow-y: auto;
+       
+     }
+
+   }
+
    
    .title-label{
      font-size: 14px;
