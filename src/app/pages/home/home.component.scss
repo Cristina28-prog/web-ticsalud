@@ -54,9 +54,11 @@ h4{
 
 .logo{
   width: 291px;
-  height: 103px;
-  background: url(../../../assets/img/tic_salud.PNG) -247px -46px;
-  margin: 0 auto;
+    height: 108px;
+    background-image: url(../../../assets/img/logo_large.PNG) ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
 }
 
 button {
@@ -109,4 +111,152 @@ footer {
   position: fixed;
   bottom: 0px;
   width: 100%;
+}
+
+
+.page {
+  margin: center;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 80px;
+}
+
+.container-page{
+  height: 100vh;
+  justify-content:initial;
+    
+}
+
+.logo-admin{
+  width: 200px;
+  
+  display: block;
+  img{
+    width: 200px;
+  }
+}  
+
+.contenedor .form-title {
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+  font-style:normal;
+  font-weight:500;
+  color:#5BC9E1;
+  font-size:xx-large;
+  text-align: left;
+
+}
+
+.contenedor .form-title span{
+ color:rgba(0,0,0, .5);
+}
+
+.contenedor .login {
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+  font-style:normal;
+  font-weight:500;
+  color:#5BC9E1;
+  font-size:x-large;
+  text-align: left;
+
+}
+
+.contenedor .login span{
+ color:rgba(0,0,0, .5);
+}
+
+.contenedor .form {
+  background: rgba(0,0,0, .07);
+  width: 90%;
+  max-width: 280px;
+  margin:auto;
+  padding: 10px 40px 15px;
+  margin-top: -50px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  
+}
+
+.id {
+  color:black;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+  font-style: normal;
+  font-weight: lighter;
+  font-size:medium;
+}
+
+select,
+option {
+color:black;
+font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+font-style: normal;
+font-weight: lighter;
+font-size:medium;
+
+}
+
+.documento {
+  color:black;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+  font-style: normal;
+  font-weight: lighter;
+  font-size:medium;
+}
+
+.nombre {
+  color:black;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+  font-style: normal;
+  font-weight: lighter;
+  font-size:medium;
+}
+
+.usuario {
+  color:black;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+  font-style: normal;
+  font-weight: lighter;
+  font-size:medium;
+}
+
+.contrasena {
+  color:black;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+  font-style: normal;
+  font-weight: lighter;
+  font-size:medium;
+}
+
+.boton_personalizado{
+  display: block;
+  text-decoration: none;
+  padding: 5px;
+  font-weight: 50;
+  color: rgba(0,0,0, .7);
+  background-color:rgba(0,0,0, .05);
+  border-radius: 6px;
+  border: 0.05px solid #1883ba;
+}
+
+.boton_personalizado:hover{
+  color: #1883ba;
+  background-color:rgba(0,0,0, .05);
+}
+
+.enfermera{
+  width: 25%;
+  display: block;
+  float: left;
+  margin-top: -70px ;
+  margin-left: 80px;
+}
+
+.doctor{
+  width: 25%;
+  display: block;
+  float: right;
+  margin-top: -70px;
+  margin-right: 80px;
+
 }

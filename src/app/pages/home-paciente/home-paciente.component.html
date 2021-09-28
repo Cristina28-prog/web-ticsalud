@@ -1,51 +1,96 @@
-<div class="container-page">
-    
+<div class="container-page">  
     <app-headergeneral></app-headergeneral>
-    <div class = "containerp1">
-          <div class = "row">
-              <div class= "col-12">
-                  <div class="header-login">
-                  
-          <h1> Bienvenidos a Tic Salud!!!</h1>
-          <h2> Salud al alcance de tu mano</h2>
-          </div> 
-              </div>
-          </div>
-      </div>
-     
-      
-      <div class = "containerp2">
+    <div class = "containerTab">    
+    <mat-button-toggle-group name="fontStyle" [(ngModel)]="page" aria-label="Font Style">
+      <mat-button-toggle value="citas" (click)="selectPage('citas')">Citas</mat-button-toggle>
+      <mat-button-toggle value="solicitar" (click)="selectPage('solicitar')">Solicitar cita</mat-button-toggle>
+    </mat-button-toggle-group>
+    </div>
+      <div class = "container2" *ngIf="page=='citas'">
           <div class = "row">
               <div class="col-12">
-                  <div class="registro-paciente">
-                      <section>
-                        <form >
-                          <h4> Consulta de Citas Médicas</h4>
-                          <label For= "consulta">
-                            <span> Numero de identificación </span>
-                            <input type="text" id= "consulta" name= "consulta">                        
-                        </label>
-                        </form>
-                      </section>  
-                      <section>
-                          <form action="">
-                            <h1> Citas Medicas</h1>
-                            <label for="calendario">
-                                <span> Calendario</span>
-                                <input type="datetime-local" id="calendario" name= "calendario">
-                            </label>
-                            <input type="submit" value="Seleccionar">
-                            </form>
-                      </section>            
-                  </div>
-              </div>
-          </div>
-      </div>
-   
-     <div class = "containerp3">
+                    <main>
+                          
+                        <table class="table table-hover">
+                          <thead>
+                              <tr>
+                                <th scope="col"> #</th>
+                                <th scope="col">Idcita</th>
+                                <th scope="col"> Fecha </th>
+                                <th scope="col"> Hora </th>
+                                <th scope="col"> Estado </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let cita of ptedetalles">
+                                <th scope="row">{{cita.Idcita}}</th>
+                                <td> {{cita.Fecha}}</td>
+                                <td>  {{cita.Hora}}</td>
+                                <td>  {{cita.Estado}}</td>
+                                <td><button   mat-raised-button color="primary" (click)="openmodalShowpatient(cita)">Detalle</button></td>
+                            
+                            
+                            
+                          </tbody>
+                        </table>        
       
+                    </main>
+              </div>
+
+      </div>
+    </div>
+    <div class = "container2" *ngIf="page=='solicitar'">
        
-    
-     </div>
+      
+
+    </div>
+         
+     <!--footer > 
+         <div class = "container4">
+             <div class = "row">
+                 <div class = "col">
+                     <a href = "#">  Preguntas frecuentes  </a> 
+                 </div>
+             </div>
+         </div>
+     </footer-->                        
      
-  </div>  
+    
+     
+ 
+     <div class="modal-paciente" *ngIf="modalShowpatient">
+        <div class="modalHeader">  <h2> detalle de las citas</h2>
+          <span class="icon-close" (click)="closemodalShowpatient()">X</span>
+        </div>
+     <div class="content-modal">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"> Idcita</th>
+            <th scope="col"> Fecha</th>
+            <th scope="col"> Hora </th>
+            <th scope="col"> estado</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope= "row"> 13456 </th>
+            <td> 12/09/2021 </td>
+            <td> 3:00 pm </td>
+            <td> Finalizada</td>
+            
+          </tr>
+         </tbody>
+      </table> 
+      <form>
+        
+        <div class="form-group">
+          
+        </div>
+        
+      </form>  
+     </div>
+
+   </div>
+</div>

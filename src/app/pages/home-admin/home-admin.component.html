@@ -1,75 +1,63 @@
-<div class="container-page">  
-    <div class = "container1">
-          <div class = "row">
-              <div class= "col-12">
-                  <title> Formulario </title>
-                  <header>
-                      <nav>
-                        <div class="label"></div>
-                    
-                      </nav>
-                  </header>
-                                     
-               </div>
-          </div>
-          <div class= "button btn btn-activate logout" (click) = "logout()"> Cerrar sesión</div>
-             
-    </div>
-     
+<app-headergeneral></app-headergeneral>
+    
+<div class="page">
+  
+    <div class="contenedor">
       
-      <div class = "container2">
-          
-                  <main>
-                      <section>
-                       
-                         <!-- <form>
-                             <label For= " Nombre">
-                                 <span> Nombre </span>
-                                 <input type="text" id="Nombre" placeholder="Nombre completo" autocomplete="name" required>
-                             </label>
-                             <input type="submit">
-                         </form>  -->
-                         
-                         <div class="contenedor">
-                             <div class = "row">
-                                 <div class = "col-6">
-                                     <form action="" class="form">
-                                         <div class="form-header">
-                                             <h1 class="form-title">A<span>dministrador</span></h1>
-                                             <div class="select">
-                                                 <select name="format" id="format">
-                                                     <option selected disabled>Seleccione un perfil</option>
-                                                     <option value="Secretaria">Secretaria</option>
-                                                     <option value="Medico">Médico</option>
-                                                     <option value="Paciente">Paciente</option>
-                                             
-                                                 </select>
-                                             </div>
-                                         </div>
-                                     </form>
-
-                                 </div>
-                             </div>
-                        </div>
-                      </section>
-                  </main>
-              
-      </div>
-  
-  <footer > 
-      <div class = "container3">
-          <div class = "row">
-              <div class = "col">
-                  <a href = "#">  Preguntas frecuentes  </a> 
-              </div>
-          </div>
-      </div>
-  </footer>
-  
-  </div>
-        
+        <div class="enfermera">
+            <img  src="../../../assets/img/enfermera.png" />
+        </div>
+        <div class="doctor">
+            <img   src="../../../assets/img/doctor.png"/>
+        </div>
+    
+        <form class="form">
+            <h1 class="form-title">C<span>reación de perfil</span></h1>
+            <section>
+                <label for="ID de usuario" class="id">
+                    <span>ID de usuario</span>
+                    <input type="text" placeholder="Escriba ID" id="ID de usuario">
+                </label>
+            <div class="select">
+                <select name="format" id="format">
+                    <option selected disabled>ID</option>
+                    <option value="CC">CC</option>
+                    <option value="CE">CE</option>
+                    <option value="TI">TI</option>
             
-                
+                </select>
+            </div>
+                <label for="Numero de documento" class="documento">
+                    <span>Número de documentos</span>
+                    <input type="text" placeholder="Escriba Id" id="Numero de documento">
+                </label>
+                <label for="Nombre" class="nombre">
+                    <span>Nombre</span>
+                    <input type="text" placeholder="Escriba nombre" id="Nombre">
+                </label>
+            <div class="select">
+                <select name="format" id="format">
+                    <option selected disabled>Seleccione un perfil</option>
+                    <option value="Secretaria">Secretaria</option>
+                    <option value="Medico">Médico</option>
+                    <option value="Paciente">Paciente</option>
+            
+                </select>
+            </div>
+            <h2 class="login">L<span>ogin</span></h2>
+                <label for="Usuario" class="usuario">
+                    <span>Usuario</span>
+                    <input type="text" placeholder="Escriba usuario" id="Usuario">
+                </label>
+                <label for="Contrasena" class="contrasena">
+                    <span>Contraseña</span>
+                    <input type="text" placeholder="Escriba contraseña"id="Contrasena">
+                </label>
+           
+                                
+                      </section>
+        </form>
+</div>
 
 
 
