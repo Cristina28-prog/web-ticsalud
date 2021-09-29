@@ -1,11 +1,15 @@
 
 <div class="container-page">  
   <app-headergeneral></app-headergeneral>
-
-  <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <div class="paciente">
+    <mat-button-toggle-group name="fontStyle" [(ngModel)]="select" aria-label="Font Style">
     <mat-button-toggle value="lista citas" (click)="selectPage('citas')">lista citas</mat-button-toggle>
     <mat-button-toggle value="Pacientes" (click)="selectPage('pacientes')" >Pacientes</mat-button-toggle>
-  </mat-button-toggle-group>
+    </mat-button-toggle-group> 
+  </div>
+ 
+
+ 
 
       <div class = "container2" *ngIf="select=='citas'">
           <div class = "row">

@@ -68,20 +68,20 @@
           <tr>
             <th scope="col"> Idcita</th>
             <th scope="col"> Fecha</th>
-            <th scope="col"> Hora </th>
-            <th scope="col"> estado</th>
+            <th scope="col"> Medicamentos </th>
+            <th scope="col"> Dosis</th>
             
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope= "row"> 13456 </th>
-            <td> 12/09/2021 </td>
-            <td> 3:00 pm </td>
-            <td> Finalizada</td>
-            
+        <tbody class="table-pte">
+          <tr *ngfor="let item of listaMedicamentosPte; let i=index;">
+            <th scope= "row"> {{item.Idcita}} </th>
+            <th scope= "row"> {{item.Fecha}} </th>
+            <td> {{item.Medicamentos}}  </td>
+            <td>  {{item.Dosis}}  </td>
+           
           </tr>
-         </tbody>
+        </tbody>
       </table> 
       <form>
         

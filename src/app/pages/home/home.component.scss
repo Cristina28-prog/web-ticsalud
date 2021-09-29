@@ -78,7 +78,9 @@ button {
 } 
 
 
-
+#login-elements{
+  max-width: 100%;
+}
 
 
 .body{
@@ -249,14 +251,14 @@ font-size:medium;
   display: block;
   float: left;
   margin-top: -70px ;
-  margin-left: 80px;
+  margin-left: 270px;
 }
 
 .doctor{
   width: 25%;
   display: block;
   float: right;
-  margin-top: -70px;
-  margin-right: 80px;
+  margin-top: -350px;
+  margin-right: 210px;
 
 }

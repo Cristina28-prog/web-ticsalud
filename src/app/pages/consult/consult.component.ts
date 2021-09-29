@@ -27,6 +27,11 @@ export class ConsultComponent implements OnInit {
 
      }
 
+     page:string="listaCitas";
+     name:string="";
+     identificación:number=0;
+     fecha:string="";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -52,5 +57,7 @@ export class ConsultComponent implements OnInit {
   openModaldetails(){
     this.modalShowdetails=true;
   }
+  
+
 
 }

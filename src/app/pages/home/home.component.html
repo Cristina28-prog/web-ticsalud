@@ -62,25 +62,37 @@
 <div class="page">
    
     <div class="contenedor">
-      
-        <div class="enfermera">
-            <img  src="../../../assets/img/enfermera.png" />
-        </div>
-        <div class="doctor">
-            <img   src="../../../assets/img/doctor.png"/>
-        </div>
+        <section id= "login-elements">
+            <div class="container-fluid">
+                 <div class="col md-4 order-first">
+                    <div class="enfermera">
+                        <img  src="../../../assets/img/enfermera.png" />
+                 </div>
+            </div>
+            <div class="col md-4 order-2">
+                 <form class="form"  [formGroup]="formLogin" (ngSubmit)="onSubmit()" >
+                        <h1 class="form-title">I<span>nicio de Sesión</span></h1>
+                        <section>
+                            <input  formControlName="user" class="controls" type="text" name="user" id="usuarios" placeholder="usuario" required>
+                            <div *ngIf="submitted && f['user']['errors']"><div *ngIf=" f['user']['errors']['required']"> usuario es requerido</div></div>
+                            <input  formControlName="password" class="controls" type="password" name="pasword" id="pasword" placeholder="ingrese su contraseña" required>
+                            <div *ngIf="submitted && f['password']['errors']"  ><div *ngIf="f['password']['errors']['required']"> El password es requerido</div></div>
+                            <button   mat-raised-button color="primary" type="submit"> Iniciar sesión </button> 
+                        </section>
+                 </form>
+            </div>
+             <div class="col md-4 order-3">
+                  <div class="doctor">
+                        <img   src="../../../assets/img/doctor.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                
+       
     
-        <form class="form"  [formGroup]="formLogin" (ngSubmit)="onSubmit()" >
-            <h1 class="form-title">I<span>nicio de Sesión</span></h1>
-            <section>
-                <input  formControlName="user" class="controls" type="text" name="user" id="usuarios" placeholder="usuario" required>
-                <div *ngIf="submitted && f['user']['errors']"><div *ngIf=" f['user']['errors']['required']"> usuario es requerido</div></div>
-                <input  formControlName="password" class="controls" type="password" name="pasword" id="pasword" placeholder="ingrese su contraseña" required>
-                <div *ngIf="submitted && f['password']['errors']"  ><div *ngIf="f['password']['errors']['required']"> El password es requerido</div></div>
-                <button   mat-raised-button color="primary" type="submit"> Iniciar sesión </button> 
-            </section>
-        </form>
-</div>
+        
+    </div>
 
 </div>
 
