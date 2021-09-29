@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatOptgroup } from '@angular/material/core';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MedicamentosComponent } from './pages/medicamentos/medicamentos.component';
 
 
 
@@ -37,6 +38,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     HomeMedicoComponent,
     HeadergeneralComponent,
     HeadergeneralComponent,
+    MedicamentosComponent,
   ],
   imports: [
     BrowserModule,

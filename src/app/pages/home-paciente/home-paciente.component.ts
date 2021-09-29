@@ -39,11 +39,9 @@ export class HomePacienteComponent implements OnInit {
     Idcita:23244,
     Fecha:"19/09/2021",
     Medicamentos:"Acetaminofen tabletas x 500mg; Amoxicilina capsulas x 500mg",
-    Dosis:"2 dosis cada 8 horas; 1 dosis cada 12 horas", 
-
-   },
-
-  ]
+    Dosis:"2 dosis cada 8 horas; 1 dosis cada 12 horas"
+   }
+  ];
   
   page:string="citas";
   Idcita:number=0;

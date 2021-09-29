@@ -39,25 +39,8 @@
 
       </div>
     </div>
-    <div class = "container2" *ngIf="page=='solicitar'">
-       
-      
-
-    </div>
-         
-     <!--footer > 
-         <div class = "container4">
-             <div class = "row">
-                 <div class = "col">
-                     <a href = "#">  Preguntas frecuentes  </a> 
-                 </div>
-             </div>
-         </div>
-     </footer-->                        
-     
     
-     
- 
+  
      <div class="modal-paciente" *ngIf="modalShowpatient">
         <div class="modalHeader">  <h2> detalle de las citas</h2>
           <span class="icon-close" (click)="closemodalShowpatient()">X</span>
@@ -74,12 +57,11 @@
           </tr>
         </thead>
         <tbody class="table-pte">
-          <tr *ngfor="let item of listaMedicamentosPte; let i=index;">
+          <tr *ngFor="let item of listaMedicamentosPte;">
             <th scope= "row"> {{item.Idcita}} </th>
             <th scope= "row"> {{item.Fecha}} </th>
             <td> {{item.Medicamentos}}  </td>
             <td>  {{item.Dosis}}  </td>
-           
           </tr>
         </tbody>
       </table> 
@@ -92,5 +74,32 @@
       </form>  
      </div>
 
+   </div>
+
+   <div class = "container2" *ngIf="page=='solicitar'">
+     <div class="solicitud_citas">
+       <h1> FORMULARIO SOLICITUD DE CITAS MÉDICAS</h1>
+     <form>
+      <div class="row">
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="Id Usuario">
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="Nombre completo">
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="fecha">
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="hora">
+        </div>
+        <div class="col-6">
+          <button   mat-raised-button color="primary" type="submit"> Realizar la cita </button> 
+        </div>
+        
+      </div>
+    </form> 
+     </div>
+    
    </div>
 </div>
