@@ -15,7 +15,7 @@
             <nav> 
                <mat-button-toggle-group name="fontStyle" [(ngModel)]="page" aria-label="Font Style">
                <mat-button-toggle value="citas" (click)="selectPage('perfil')">creacion de perfil</mat-button-toggle>
-               <mat-button-toggle value="solicitar" (click)="selectPage('trazabilidad-md')"> trazabilidad de medicamentos</mat-button-toggle>
+               <mat-button-toggle value="solicitar" (click)="selectPage('consultar')"> consultar</mat-button-toggle>
                </mat-button-toggle-group> 
             </nav>
             
@@ -70,54 +70,43 @@
                           </section>
             </form>
         </div>
-       <div class = "container3" *ngIf= "page=='trazabilidad-md'  ">
+       <div class = "container3" *ngIf= "page=='consultar'">
         <form class="form">
-            <h1 class="form-title">R<span>eporte de medicamentos</span></h1>
-            <label for="ID de usuario" class="id">
-                <span>ID de usuario</span>
-                <input type="text" placeholder="Escriba ID" id="ID de usuario">
-            </label>
-            <input type="date" name="fecha" class="time">
-            <form>
-                <input type="submit" name="boton1" value="consultar" class="boton_personalizado">
-        </form>
-    <!-- <div class = "container4">
-        <div class = "row">
-            <div class="col-12">
-                <main>
-                          
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                        <th scope="col"> Id_medicamentos</th>
-                        <th scope="col"> Medicamentos</th>
-                        <th scope="col"> Fecha </th>
-                        
-                        
-                        </tr>
-                          </thead>
-                          <tbody>
-                            <tr *ngFor="let item of trazabilidad">
-                                <th scope="row">{{item.Id_medicamentos}}</th>
-                                <td> {{item.Medicamentos}}</td>
-                                <td>  {{cita.Fecha}}</td>
-                               
-                                <td><button   mat-raised-button color="primary" (click)="">Detalle</button></td>
-                            
-                            
-                            
-                          </tbody>
-                        </table>        
-      
-                    </main>
-              </div>
-
-      </div>
-    </div> -->
+            <h1 class="form-title">C<span>onsultar perfil</span></h1>
+            <section>
+              
+               
+            <div class="select">
+                <select name="format" id="format">
+                    <option selected disabled>Seleccione un perfil</option>
+                    <option value="Secretaria">Secretaria</option>
+                    <option value="Medico">Médico</option>
+                    <option value="Paciente">Paciente</option>
             
-    
-    
+                </select>
+            </div>
+
+            <label for="Numero de documento" class="documento">
+                <span>Número de documentos</span>
+                <input type="text" placeholder="Escriba Id" id="Numero de documento">
+            </label>
+            <label for="Nombre" class="nombre">
+                <span>Nombre</span>
+                <input type="text" placeholder="Escriba nombre" id="Nombre">
+            </label>
+            
+            <div class="d-grid gap-2 col-8 mx-auto">
+                <button mat-raised-button color="primary" type="button">Buscar</button>
+                <button mat-raised-button color="primary" type="button">Editar</button>
+                <button mat-raised-button color="primary" type="button">Actualizar</button>
+                <button mat-raised-button color="primary" type="button">Eliminar</button>
+              </div>
+             
+                       
+                    </section>
         </form>
+     
+        
        </div>
 </div>
 

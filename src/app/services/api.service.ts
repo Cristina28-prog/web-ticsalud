@@ -7,26 +7,26 @@ import { Router } from '@angular/router';
 export class ApiService {
 userList=[
   {
-    user: "497651",
-    password: "12holf800",
+    user: "medico",
+    password: "123med",
     profileType:"medico",
     name: "Ricardo Rodriguez"
   },
   {
-    user: "1008324",
-    password: "jfdu579",
+    user: "secretaria",
+    password: "123secr",
     profileType:"secretaria",
     name: "Margot García"
   },
   {
-    user: "197974",
-    password: "kh2492h",
+    user: "admin",
+    password: "123admin",
     profileType:"administrador",
     name: "Maria Calle"
   },
   {
-    user: "1278940",
-    password: "y282187u",
+    user: "paciente",
+    password: "123pte",
     profileType:"paciente",
     name: "Oscar Baron"
   },

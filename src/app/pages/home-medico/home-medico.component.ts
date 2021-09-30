@@ -76,10 +76,24 @@ export class HomeMedicoComponent implements OnInit {
      identificacion:"",
      fecha:""
   }
+  
+  // modalShowmed:boolean=false;
+  // trazabilidad = [  {
+  //   Idmedicamento:1,
+  //   medicamento:"acetaminofen",
+  //   nombre_paciente:"Manuel Villanueva",
+  //   fecha:"4/10/2021",
+    
+  // }];
+
+
  // declara las variables del formulario
   medicamento:string="";
   cantidad:number=0;
   detalle:string=""; 
+  idmedicamento:string="";
+  nombre_paciente:string="";
+
 
   constructor(private _snackBar: MatSnackBar) {
 
@@ -97,6 +111,14 @@ export class HomeMedicoComponent implements OnInit {
     this.selectCita=cita;
     this.modalShow=true;
   }
+
+  // closeMed(){
+  //   this.modalShowmed=false;
+  // }
+
+  // openmodalShowmed(cita:any){
+  //    this.modalShowmed=true;
+  // }
 
   remove(position:number){
     this.listaMedicamanetos.splice(position, 1);
