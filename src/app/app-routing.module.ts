@@ -7,7 +7,7 @@ import { HomeAdminComponent } from './pages/home-admin/home-admin.component';
 import { HomeMedicoComponent } from './pages/home-medico/home-medico.component';
 import { HomePacienteComponent } from './pages/home-paciente/home-paciente.component';
 import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
+import { MedicamentosComponent } from './pages/medicamentos/medicamentos.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
@@ -26,11 +26,7 @@ const routes: Routes = [
     component: HomeMedicoComponent,
    //   canActivate:[GuardNameGuard]
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-  //    canActivate:[GuardNameGuard]
-  },
+
   {
     path: 'register',
     component: RegisterComponent,
@@ -48,6 +44,8 @@ const routes: Routes = [
     component: HomePacienteComponent,
   //  canActivate:[GuardNameGuard]
   },
+
+  
   
   {
     path:'',
