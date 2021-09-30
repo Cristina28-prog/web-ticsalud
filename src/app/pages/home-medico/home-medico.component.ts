@@ -77,14 +77,14 @@ export class HomeMedicoComponent implements OnInit {
      fecha:""
   }
   
-  // modalShowmed:boolean=false;
-  // trazabilidad = [  {
-  //   Idmedicamento:1,
-  //   medicamento:"acetaminofen",
-  //   nombre_paciente:"Manuel Villanueva",
-  //   fecha:"4/10/2021",
+   modalShowmed:boolean=false;
+   trazabilidad = [  {
+   Idmedicamento:1,
+   Nombremed:"acetaminofen",
+   IdUsuario:"Manuel Villanueva",
+   FechaFormula:"4/10/2021",
     
-  // }];
+  }];
 
 
  // declara las variables del formulario
@@ -107,18 +107,19 @@ export class HomeMedicoComponent implements OnInit {
     this.modalShow=false;
   }
 
+  closemodalShowmed(){
+    this.modalShowmed=false;
+  }
+  openmodalShowmed(){
+    this.modalShowmed=true;
+  }
+
   openModal(cita:any){
     this.selectCita=cita;
     this.modalShow=true;
   }
 
-  // closeMed(){
-  //   this.modalShowmed=false;
-  // }
-
-  // openmodalShowmed(cita:any){
-  //    this.modalShowmed=true;
-  // }
+  
 
   remove(position:number){
     this.listaMedicamanetos.splice(position, 1);
