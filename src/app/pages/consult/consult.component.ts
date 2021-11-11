@@ -6,10 +6,58 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./consult.component.scss']
 })
 export class ConsultComponent implements OnInit {
+  modalShow:boolean=false;
+  guardarcitas= [];
+
+     guardarCita={
+     name:"",
+     identificacion:"",
+     fecha:""
+  }
+  select="citas"
+
+  modalShowdetails:boolean=false;
+  verdetalles= [];
+      
+     verdetalle={
+       idMedicamento:"",
+       nombreMed:"",
+       cantidad:"",
+       fecha:"",
+
+     }
+
+     page:string="listaCitas";
+     name:string="";
+     identificación:number=0;
+     fecha:string="";
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  close(){
+    this.modalShow=false;
+  }
+
+  selectPage(select:string){
+    this.select=select;
+  }
+
+
+  openModal(){
+    
+    this.modalShow=true;
+  }
+  
+  closedetails(){
+    this.modalShowdetails=false;
+
+  }
+  openModaldetails(){
+    this.modalShowdetails=true;
+  }
+  
+
 
 }

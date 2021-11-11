@@ -1,0 +1,125 @@
+.body{
+    height:200px ;
+    
+  }
+
+  .citas{
+    height: calc( 100vh - 203px );
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 30px;
+    width: 400px;
+    height: 320px;
+    background: #4c2882;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom:300px;
+    border-radius: 10px;
+    }
+  
+  .container-page{
+    height: 100vh;
+    justify-content:initial;
+      
+  }
+
+  .logo{
+    width: 291px;
+    height: 103px;
+    background: url(../../../assets/img/tic_salud.PNG) -247px -46px;
+    margin: 0 auto;
+  }
+
+  
+  
+  .container2{
+    
+    margin-top: 80px;
+    padding-top: 20Px;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 30px;
+    width: 700px;
+    height: 150px;
+    margin: auto;
+    margin-bottom:300px;
+    border-radius: 10px;
+       
+  }
+
+  .container3{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+
+  .col-12 {
+    width: 700px;
+    height: 100px;
+    
+  }
+  
+  .container4 {
+    background: #343a40; 
+    width: 100%;
+    height: 80px; 
+  
+  }
+  
+ 
+  footer {
+    height: 60px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+  }
+
+    
+    input{
+      margin-left: 2px;
+    }
+    label{
+      width: 50%;
+    }
+    
+    span{
+      width: 80px;
+      max-width: 80px;
+      min-width: 80px;
+      margin-right: 4px;
+    }
+  
+
+  .info-user{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+
+  .modal-trazabilidad{
+    
+      position: absolute;
+      width: 70%;
+      height: 400px;
+      top: calc( 50vh - 200px );
+      left: 15%;
+      border-radius: 10px;
+      border: 0px solid #ddd; 
+      background-color: #fefefe;
+      -webkit-box-shadow: 2px 3px 24px 2px rgba(212,205,212,1);
+      -moz-box-shadow: 2px 3px 24px 2px rgba(212,205,212,1);
+      box-shadow: 2px 3px 24px 2px rgba(212,205,212,1);
+      z-index: 1000s;}
+  

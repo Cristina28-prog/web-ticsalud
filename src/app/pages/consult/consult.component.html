@@ -1,1 +1,437 @@
-<p>consult works!</p>
+
+<div class="container-page">  
+  <app-headergeneral></app-headergeneral>
+  <div class="paciente">
+     <mat-button-toggle-group name="fontStyle" [(ngModel)]="select" aria-label="Font Style">
+    <mat-button-toggle value="lista citas" (click)="selectPage('citas')">lista citas</mat-button-toggle>
+    <mat-button-toggle value="Pacientes" (click)="selectPage('pacientes')" >Pacientes</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+ 
+
+ 
+
+      <div class = "container2" *ngIf="select=='citas'">
+          <div class = "row">
+              <div class="col-12">
+                    <main>
+                        <section>
+                            <!-- <form action = "">
+                                <label For= "hora">
+                                    <span> Hora </span>
+                                    <input type="time" id= "hora" name= "hora">                        
+                                </label>
+                                <label For= "dia">
+                                    <span> Día </span>
+                                    <input type="date" id= "dia" name= "dia">                        
+                                </label>
+                                <label For= "semana">
+                                    <span> Semana </span>
+                                    <input type="week" id= "semana" name= "semana">                        
+                                </label>
+                                <label For= "mes">
+                                    <span> Mes </span>
+                                    <input type="month" id= "mes" name= "mes">                        
+                                </label>
+                                    <input type="submit">
+                            </form>  -->
+                            <form action="">
+                                <h1> Citas Medicas</h1>
+                                <label for="calendario">
+                                    <span> Calendario</span>
+                                    <input type="datetime-local" id="calendario" name= "calendario">
+                                </label>
+                                <input type="submit" value="Seleccionar">
+                                <button class="" (click)="openModal()"> Crear Usuario</button>
+                            </form>
+                        </section>
+                    </main>
+              </div>
+              <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+              <div class="container">
+              <div class="row flex-lg-nowrap">
+                <div class="col">
+                  <div class="row flex-lg-nowrap">
+                    <div class="col mb-3">
+                      <div class="e-panel card">
+                        <div class="card-body">
+                          <div class="card-title">
+                            <h6 class="mr-2"><span> Citas-médicas</span><small class="px-1"> TicSalud </small></h6>
+                          </div>
+                          <div class="e-table">
+                            <div class="table-responsive table-lg mt-3">
+                              <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th class="align-top">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
+                                        <input type="checkbox" class="custom-control-input" id="all-items">
+                                        <label class="custom-control-label" for="all-items"></label>
+                                      </div>
+                                    </th>
+                                    <th> Id </th>
+                                    <th class="max-width">Nombre</th>
+                                    <th class="sortable"> Fecha</th>
+                                    <th> </th>
+                                    <th>Acciones</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-1">
+                                        <label class="custom-control-label" for="item-1"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle">Adam Cotter</td>
+                                    <td class="text-nowrap align-middle"><span>09 Dec 2017</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-2">
+                                        <label class="custom-control-label" for="item-2"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle">Pauline Noble</td>
+                                    <td class="text-nowrap align-middle"><span>26 Jan 2018</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-3">
+                                        <label class="custom-control-label" for="item-3"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle"> Alejandra Borrero</td>
+                                    <td class="text-nowrap align-middle"><span>27 Jan 2018</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-4">
+                                        <label class="custom-control-label" for="item-4"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle">Fredy Martinez</td>
+                                    <td class="text-nowrap align-middle"><span>20 Jan 2021</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-5">
+                                        <label class="custom-control-label" for="item-5"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle"> Ariel García</td>
+                                    <td class="text-nowrap align-middle"><span>13 Jan 2021</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-6">
+                                        <label class="custom-control-label" for="item-6"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle"> Benjamin Gonzales</td>
+                                    <td class="text-nowrap align-middle"><span>25 Jan 2018</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-7">
+                                        <label class="custom-control-label" for="item-7"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle"> Adriana Ortiz</td>
+                                    <td class="text-nowrap align-middle"><span>12 Jan 2018</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-8">
+                                        <label class="custom-control-label" for="item-8"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle">Hair Muñoz</td>
+                                    <td class="text-nowrap align-middle"><span>27 Jan 2018</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-9">
+                                        <label class="custom-control-label" for="item-9"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle">Diana Ospina</td>
+                                    <td class="text-nowrap align-middle"><span>12 Dec 2017</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-10">
+                                        <label class="custom-control-label" for="item-10"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle"> Sara Nuñez</td>
+                                    <td class="text-nowrap align-middle"><span>10 Dec 2017</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-11">
+                                        <label class="custom-control-label" for="item-11"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle">Daniela Lujan</td>
+                                    <td class="text-nowrap align-middle"><span>03 Dec 2017</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-on"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="align-middle">
+                                      <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                                        <input type="checkbox" class="custom-control-input" id="item-12">
+                                        <label class="custom-control-label" for="item-12"></label>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                      <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                                    </td>
+                                    <td class="text-nowrap align-middle">Letizia Prieto</td>
+                                    <td class="text-nowrap align-middle"><span>09 Dec 2017</span></td>
+                                    <td class="text-center align-middle"><i class="fa fa-fw text-secondary cursor-pointer fa-toggle-off"></i></td>
+                                    <td class="text-center align-middle">
+                                      <div class="btn-group align-top">
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                                          <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                              <ul class="pagination mt-3 mb-0">
+                                <li class="disabled page-item"><a href="#" class="page-link">‹</a></li>
+                                <li class="active page-item"><a href="#" class="page-link">1</a></li>
+                                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                <li class="page-item"><a href="#" class="page-link">›</a></li>
+                                <li class="page-item"><a href="#" class="page-link">»</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+              
+
+                </div>
+              </div>
+              </div>
+
+              
+          </div>
+          <div class="modal-medico" *ngIf="modalShow" >
+            <div class="modalHeader">  <h2> Guardar Cita</h2>
+               <span class="icon-close" (click)="close()">X</span>
+             </div>
+           <div class="content-modal">
+            <form>
+              
+              <div class="form-group">
+                <label for=" identificacion"> Identificacion</label>
+                <input type=" identificación" class="form-control" id=" identificacion" placeholder="identificacion">
+                <small id="emailHelp" class="form-text text-muted"> identificacion del paciente</small>
+              </div>
+              <div class="form-group">
+                <label for="Nombre"> Nombre </label>
+                <input type="text" class="form-control" id="Nombre"  placeholder="nombre paciente">
+                <small id="emailHelp" class="form-text text-muted"> Nombre completo</small>
+              </div>
+              <div class="form-group">
+                <label for="hora"> hora </label>
+                <input type="time" class="form-control" id="hora"  placeholder="hora de la cita">
+              </div>
+              <button type="submit" class="btn btn-primary"> Guardar</button>
+            </form>  
+            
+    
+               <p></p>
+           </div>
+      </div>
+      </div>
+
+      <div class = "containermodal" *ngIf="select=='pacientes'">
+        <h2>Pacientes</h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col"> #</th>
+              <th scope="col">N° Identificación</th>
+              <th scope="col"> Nombre </th>
+              <th scope="col"> Fecha</th>
+              <th scope="col"> Detalle </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope= "row"> 1 </th>
+              <td> 1846068</td>
+              <td> Juan Manuel Villanueva</td>
+              <td> 12/02/2021</td>
+              <mat-icon class="" (click)="openModaldetails()"> more_vert</mat-icon> 
+            </tr>
+           </tbody>
+        </table>  
+        <div class="modal-medicamentos" *ngIf="modalShowdetails">
+          <div class="modalHeader">  <h2> detalle medicamentos</h2>
+            <span class="icon-close" (click)="closedetails()">X</span>
+          </div>
+       <div class="content-modal">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col"> Id Medicamento</th>
+              <th scope="col"> Nombre Medicamento</th>
+              <th scope="col"> Cantidad </th>
+              <th scope="col"> Fecha</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope= "row"> 13f67h8 </th>
+              <td> Acetaminofen tabletas X 100mg</td>
+              <td> 2 </td>
+              <td> 12/02/2021</td>
+              
+            </tr>
+           </tbody>
+        </table> 
+        <form>
+          
+          <div class="form-group">
+            
+          </div>
+          
+        </form>  
+       </div>
+
+     </div>
+      </div>       
+</div>                          

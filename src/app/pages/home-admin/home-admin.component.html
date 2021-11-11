@@ -1,1 +1,116 @@
-<p>home-admin works!</p>
+<app-headergeneral></app-headergeneral>
+    
+<div class="page">
+  
+    <div class="contenedor">
+      
+        <div class="enfermera">
+            <img  src="../../../assets/img/enfermera.png" />
+        </div>
+        <div class="doctor">
+            <img   src="../../../assets/img/doctor.png"/>
+        </div>
+
+        <div class = "header">    
+            <nav> 
+               <mat-button-toggle-group name="fontStyle" [(ngModel)]="page" aria-label="Font Style">
+               <mat-button-toggle value="citas" (click)="selectPage('perfil')">creacion de perfil</mat-button-toggle>
+               <mat-button-toggle value="solicitar" (click)="selectPage('consultar')"> consultar</mat-button-toggle>
+               </mat-button-toggle-group> 
+            </nav>
+            
+        </div>
+    
+        <div class = "container2" *ngIf="page=='perfil'">
+            <form class="form">
+                <h1 class="form-title">C<span>reación de perfil</span></h1>
+                <section>
+                    <label for="ID de usuario" class="id">
+                        <span>ID de usuario</span>
+                        <input type="text" placeholder="Escriba ID" id="ID de usuario">
+                    </label>
+                
+                <div class="select">
+                    <select name="format" id="format">
+                        <option selected disabled>ID</option>
+                        <option value="CC">CC</option>
+                        <option value="CE">CE</option>
+                        <option value="TI">TI</option>
+                
+                    </select>
+                </div>
+                    <label for="Numero de documento" class="documento">
+                        <span>Número de documentos</span>
+                        <input type="text" placeholder="Escriba Id" id="Numero de documento">
+                    </label>
+                    <label for="Nombre" class="nombre">
+                        <span>Nombre</span>
+                        <input type="text" placeholder="Escriba nombre" id="Nombre">
+                    </label>
+                <div class="select">
+                    <select name="format" id="format">
+                        <option selected disabled>Seleccione un perfil</option>
+                        <option value="Secretaria">Secretaria</option>
+                        <option value="Medico">Médico</option>
+                        <option value="Paciente">Paciente</option>
+                
+                    </select>
+                </div>
+                <h2 class="login">L<span>ogin</span></h2>
+                    <label for="Usuario" class="usuario">
+                        <span>Usuario</span>
+                        <input type="text" placeholder="Escriba usuario" id="Usuario">
+                    </label>
+                    <label for="Contrasena" class="contrasena">
+                        <span>Contraseña</span>
+                        <input type="text" placeholder="Escriba contraseña"id="Contrasena">
+                    </label>
+                    <button   mat-raised-button color="primary" type="submit"> Crear perfil </button> 
+                                    
+                          </section>
+            </form>
+        </div>
+       <div class = "container3" *ngIf= "page=='consultar'">
+        <form class="form">
+            <h1 class="form-title">C<span>onsultar perfil</span></h1>
+            <section>
+              
+               
+            <div class="select">
+                <select name="format" id="format">
+                    <option selected disabled>Seleccione un perfil</option>
+                    <option value="Secretaria">Secretaria</option>
+                    <option value="Medico">Médico</option>
+                    <option value="Paciente">Paciente</option>
+            
+                </select>
+            </div>
+
+            <label for="Numero de documento" class="documento">
+                <span>Número de documentos</span>
+                <input type="text" placeholder="Escriba Id" id="Numero de documento">
+            </label>
+            <label for="Nombre" class="nombre">
+                <span>Nombre</span>
+                <input type="text" placeholder="Escriba nombre" id="Nombre">
+            </label>
+            
+            <div class="d-grid gap-2 col-8 mx-auto">
+                <button mat-raised-button color="primary" type="button">Buscar</button>
+                <button mat-raised-button color="primary" type="button">Editar</button>
+                <button mat-raised-button color="primary" type="button">Actualizar</button>
+                <button mat-raised-button color="primary" type="button">Eliminar</button>
+              </div>
+             
+                       
+                    </section>
+        </form>
+     
+        
+       </div>
+</div>
+
+
+
+        
+   

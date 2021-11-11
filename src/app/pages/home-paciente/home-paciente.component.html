@@ -1,1 +1,105 @@
-<p>home-paciente works!</p>
+<div class="container-page">  
+    <app-headergeneral></app-headergeneral>
+    <div class = "containerTab">    
+    <mat-button-toggle-group name="fontStyle" [(ngModel)]="page" aria-label="Font Style">
+      <mat-button-toggle value="citas" (click)="selectPage('citas')">Citas</mat-button-toggle>
+      <mat-button-toggle value="solicitar" (click)="selectPage('solicitar')">Solicitar cita</mat-button-toggle>
+    </mat-button-toggle-group>
+    </div>
+      <div class = "container2" *ngIf="page=='citas'">
+          <div class = "row">
+              <div class="col-12">
+                    <main>
+                          
+                        <table class="table table-hover">
+                          <thead>
+                              <tr>
+                                <th scope="col"> #</th>
+                                <th scope="col">Idcita</th>
+                                <th scope="col"> Fecha </th>
+                                <th scope="col"> Hora </th>
+                                <th scope="col"> Estado </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let cita of ptedetalles">
+                                <th scope="row">{{cita.Idcita}}</th>
+                                <td> {{cita.Fecha}}</td>
+                                <td>  {{cita.Hora}}</td>
+                                <td>  {{cita.Estado}}</td>
+                                <td><button   mat-raised-button color="primary" (click)="openmodalShowpatient(cita)">Detalle</button></td>
+                            
+                            
+                            
+                          </tbody>
+                        </table>        
+      
+                    </main>
+              </div>
+
+      </div>
+    </div>
+    
+  
+     <div class="modal-paciente" *ngIf="modalShowpatient">
+        <div class="modalHeader">  <h2> detalle de las citas</h2>
+          <span class="icon-close" (click)="closemodalShowpatient()">X</span>
+        </div>
+     <div class="content-modal">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"> Idcita</th>
+            <th scope="col"> Fecha</th>
+            <th scope="col"> Medicamentos </th>
+            <th scope="col"> Dosis</th>
+            
+          </tr>
+        </thead>
+        <tbody class="table-pte">
+          <tr *ngFor="let item of listaMedicamentosPte;">
+            <th scope= "row"> {{item.Idcita}} </th>
+            <th scope= "row"> {{item.Fecha}} </th>
+            <td> {{item.Medicamentos}}  </td>
+            <td>  {{item.Dosis}}  </td>
+          </tr>
+        </tbody>
+      </table> 
+      <form>
+        
+        <div class="form-group">
+          
+        </div>
+        
+      </form>  
+     </div>
+
+   </div>
+
+   <div class = "container2" *ngIf="page=='solicitar'">
+     <div class="solicitud_citas">
+       <h1> FORMULARIO SOLICITUD DE CITAS MÉDICAS</h1>
+     <form>
+      <div class="row">
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="Id Usuario">
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="Nombre completo">
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="fecha">
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" placeholder="hora">
+        </div>
+        <div class="col-6">
+          <button   mat-raised-button color="primary" type="submit"> Realizar la cita </button> 
+        </div>
+        
+      </div>
+    </form> 
+     </div>
+    
+   </div>
+</div>
